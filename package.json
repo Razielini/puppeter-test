@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "Raziel Carvajal <razielco@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-cron": "^2.0.3",
+    "puppeteer": "^4.0.0"
+  }
 }
