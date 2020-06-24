@@ -13,7 +13,6 @@ const getDataFromPuppeteer = async () => {
     const page = await browser.newPage()
     await page.goto('https://pathofexile.gamepedia.com/Divination_card')
 
-    /*
     await page.screenshot({
       path: 'src/images/screenshot.png'
     })
@@ -21,20 +20,8 @@ const getDataFromPuppeteer = async () => {
     await page.pdf({
       path: 'src/pdfs/website.pdf'
     })
-    */
 
     const table = await page.evaluate(() => Array.from (document.querySelectorAll('.wikitable:first-child span.c-item-hoverbox__activator a'), element => element.href))
-
-    /*
-    await page.goto('https://pathofexile.gamepedia.com/A_Familiar_Call', {
-      waitUntil: 'load'
-    })
-    // await page.waitForNavigation()
-
-    const title = await page.evaluate(() => document.getElementById('firstHeading').innerText)
-
-    console.log('title:: ', title)
-    */
 
     let regExpre = /\/{1}((\w|%)+\.\w{3})\?{1}/
     const useTable = [...table].slice(1, 2)
